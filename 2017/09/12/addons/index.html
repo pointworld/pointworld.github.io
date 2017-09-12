@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="C++ AddonsNode.js 插件是用 C++ 编写的动态链接共享对象，可以使用 require() 函数加载到 Node.js 中，且像普通的 Node.js 模块一样被使用。它们主要用于为运行在 Node.js 中的 JavaScript 与 C/C++ 库之间提供接口。 目前用于实现插件的方法相当复杂，涉及多个组件和 API 的知识：  V8：Node.js 目前用于提供 JavaSc">
+<meta property="og:type" content="article">
+<meta property="og:title" content="point">
+<meta property="og:url" content="http://yoursite.com/2017/09/12/addons/index.html">
+<meta property="og:site_name" content="point">
+<meta property="og:description" content="C++ AddonsNode.js 插件是用 C++ 编写的动态链接共享对象，可以使用 require() 函数加载到 Node.js 中，且像普通的 Node.js 模块一样被使用。它们主要用于为运行在 Node.js 中的 JavaScript 与 C/C++ 库之间提供接口。 目前用于实现插件的方法相当复杂，涉及多个组件和 API 的知识：  V8：Node.js 目前用于提供 JavaSc">
+<meta property="og:updated_time" content="2017-09-08T05:52:12.517Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="point">
+<meta name="twitter:description" content="C++ AddonsNode.js 插件是用 C++ 编写的动态链接共享对象，可以使用 require() 函数加载到 Node.js 中，且像普通的 Node.js 模块一样被使用。它们主要用于为运行在 Node.js 中的 JavaScript 与 C/C++ 库之间提供接口。 目前用于实现插件的方法相当复杂，涉及多个组件和 API 的知识：  V8：Node.js 目前用于提供 JavaSc">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/09/12/addons/"/>
+
+
+
+
+
+  <title> | point</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">point</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Startseite
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archiv
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/12/addons/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Point">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="point">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline"></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-12T14:35:45+08:00">
+                2017-09-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="C-Addons"><a href="#C-Addons" class="headerlink" title="C++ Addons"></a>C++ Addons</h1><p>Node.js 插件是用 C++ 编写的动态链接共享对象，可以使用 <a href="modules.html#modules_require"><code>require()</code></a> 函数加载到 Node.js 中，且像普通的 Node.js 模块一样被使用。<br>它们主要用于为运行在 Node.js 中的 JavaScript 与 C/C++ 库之间提供接口。</p>
+<p>目前用于实现插件的方法相当复杂，涉及多个组件和 API 的知识：</p>
+<ul>
+<li><p>V8：Node.js 目前用于提供 JavaScript 实现的 C++ 库。<br>V8 提供了用于创建对象、调用函数等的机制。<br>V8 的 API 文档主要在 <code>v8.h</code> 头文件中（Node.js 源代码中的 <code>deps/v8/include/v8.h</code>），也可以在查看 <a href="https://v8docs.nodesource.com/" target="_blank" rel="external">V8 在线文档</a>。</p>
+</li>
+<li><p><a href="https://github.com/libuv/libuv" target="_blank" rel="external">libuv</a>：实现了 Node.js 的事件循环、工作线程、以及平台所有的的异步操作的 C 库。<br>它也是一个跨平台的抽象库，使所有主流操作系统中可以像 POSIX 一样访问常用的系统任务，比如与文件系统、socket、定时器、以及系统事件的交互。<br>libuv 还提供了一个类似 POSIX 多线程的线程抽象，可被用于强化更复杂的需要超越标准事件循环的异步插件。<br>建议插件开发者多思考如何通过在 libuv 的非阻塞系统操作、工作线程、或自定义的 libuv 线程中降低工作负载来避免在 I/O 或其他时间密集型任务中阻塞事件循环。</p>
+</li>
+<li><p>内置的 Node.js 库。Node.js 自身开放了一些插件可以使用的 C++ API。<br>其中最重要的是 <code>node::ObjectWrap</code> 类。</p>
+</li>
+<li><p>Node.js 包含一些其他的静态链接库，如 OpenSSL。<br>这些库位于 Node.js 源代码中的 <code>deps/</code> 目录。<br>只有 V8 和 OpenSSL 符号是被 Node.js 开放的，并且通过插件被用于不同的场景。<br>更多信息可查看 <a href="#addons_linking_to_node_js_own_dependencies">链接到 Node.js 自身的依赖</a>。</p>
+</li>
+</ul>
+<p>以下例子可从 <a href="https://github.com/nodejs/node-addon-examples" target="_blank" rel="external">Node 插件示例</a> 下载，作为学习插件开发的起点。</p>
+<h2 id="Hello-world"><a href="#Hello-world" class="headerlink" title="Hello world"></a>Hello world</h2><p>“Hello World” 示例是一个简单的插件，用 C++ 编写，相当于以下 JavaScript 代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">module</span>.exports.hello = <span class="function"><span class="params">()</span> =&gt;</span> <span class="string">'world'</span>;</div></pre></td></tr></table></figure>
+<p>首先，创建 <code>hello.cc</code> 文件：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// hello.cc</span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;node.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="keyword">namespace</span> demo &#123;</div><div class="line"></div><div class="line"><span class="keyword">using</span> v8::FunctionCallbackInfo;</div><div class="line"><span class="keyword">using</span> v8::Isolate;</div><div class="line"><span class="keyword">using</span> v8::Local;</div><div class="line"><span class="keyword">using</span> v8::Object;</div><div class="line"><span class="keyword">using</span> v8::String;</div><div class="line"><span class="keyword">using</span> v8::Value;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">Method</span><span class="params">(<span class="keyword">const</span> FunctionCallbackInfo&lt;Value&gt;&amp; args)</span> </span>&#123;</div><div class="line">  Isolate* isolate = args.GetIsolate();</div><div class="line">  args.GetReturnValue().Set(String::NewFromUtf8(isolate, <span class="string">"world"</span>));</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">(Local&lt;Object&gt; exports)</span> </span>&#123;</div><div class="line">  NODE_SET_METHOD(exports, <span class="string">"hello"</span>, Method);</div><div class="line">&#125;</div><div class="line"></div><div class="line">NODE_MODULE(addon, init)</div><div class="line"></div><div class="line">&#125;  <span class="comment">// namespace demo</span></div></pre></td></tr></table></figure>
+<p>注意，所有的 Node.js 插件必须导出一个如下模式的初始化函数：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">Initialize</span><span class="params">(Local&lt;Object&gt; exports)</span></span>;</div><div class="line">NODE_MODULE(module_name, Initialize)</div></pre></td></tr></table></figure>
+<p><code>NODE_MODULE</code> 后面没有分号，因为它不是一个函数（详见 <code>node.h</code>）。</p>
+<p><code>module_name</code> 必须匹配最终的二进制文件名（不包括 .node 后缀）。</p>
+<p>在 <code>hello.cc</code> 示例中，初始化函数是 <code>init</code>，插件模块名是 <code>addon</code>。</p>
+<h3 id="Building"><a href="#Building" class="headerlink" title="Building"></a>Building</h3><p>当源代码已被编写，它必须被编译成二进制 <code>addon.node</code> 文件。<br>要做到这点，需在项目的顶层创建一个名为 <code>binding.gyp</code> 的文件，它使用一个类似 JSON 的格式来描述模块的构建配置。<br>该文件会被 <a href="https://github.com/nodejs/node-gyp" target="_blank" rel="external">node-gyp</a>（一个用于编译 Node.js 插件的工具）使用。</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"targets"</span>: [</div><div class="line">    &#123;</div><div class="line">      <span class="attr">"target_name"</span>: <span class="string">"addon"</span>,</div><div class="line">      <span class="attr">"sources"</span>: [ <span class="string">"hello.cc"</span> ]</div><div class="line">    &#125;</div><div class="line">  ]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>注意：Node.js 会捆绑与发布一个版本的 <code>node-gyp</code> 工具作为 <code>npm</code> 的一部分。<br>该版本不可以直接被开发者使用，仅为了支持使用 <code>npm install</code> 命令编译与安装插件的能力。<br>需要直接使用 <code>node-gyp</code> 的开发者可以使用 <code>npm install -g node-gyp</code> 命令进行安装。<br>查看 <code>node-gyp</code> <a href="https://github.com/nodejs/node-gyp#installation" target="_blank" rel="external">安装说明</a>了解更多信息，包括平台特定的要求。</p>
+<p>但 <code>binding.gyp</code> 文件已被创建，使用 <code>node-gyp configure</code> 为当前平台生成相应的项目构建文件。<br>这会在 <code>build/</code> 目录下生成一个 <code>Makefile</code> 文件（在 Unix 平台上）或 <code>vcxproj</code> 文件（在 Windows 上）。</p>
+<p>下一步，调用 <code>node-gyp build</code> 命令生成编译后的 <code>addon.node</code> 的文件。<br>它会被放进 <code>build/Release/</code> 目录。</p>
+<p>当使用 <code>npm install</code> 安装一个 Node.js 插件时，npm 会使用自身捆绑的 <code>node-gyp</code> 版本来执行同样的一套动作，为用户要求的平台生成一个插件编译后的版本。</p>
+<p>当构建完成时，二进制插件就可以在 Node.js 中被使用，通过 <a href="modules.html#modules_require"><code>require()</code></a> 构建后的 <code>addon.node</code> 模块：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// hello.js</span></div><div class="line"><span class="keyword">const</span> addon = <span class="built_in">require</span>(<span class="string">'./build/Release/addon'</span>);</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(addon.hello());</div><div class="line"><span class="comment">// 打印: 'world'</span></div></pre></td></tr></table></figure>
+<p>请查看 <a href="https://github.com/arturadib/node-qt" target="_blank" rel="external">https://github.com/arturadib/node-qt</a> 了解生产环境中的例子。</p>
+<p>因为编译后的二进制插件的确切路径取决于它如何被编译（比如有时它可能在 <code>./build/Debug/</code> 中），所以插件可以使用 <a href="https://github.com/TooTallNate/node-bindings" target="_blank" rel="external">bindings</a> 包加载编译后的模块。</p>
+<p>注意，虽然 <code>bindings</code> 包在如何定位插件模块的实现上更复杂，但它本质上使用了一个 <code>try-catch</code> 模式，类似如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">try</span> &#123;</div><div class="line">  <span class="keyword">return</span> <span class="built_in">require</span>(<span class="string">'./build/Release/addon.node'</span>);</div><div class="line">&#125; <span class="keyword">catch</span> (err) &#123;</div><div class="line">  <span class="keyword">return</span> <span class="built_in">require</span>(<span class="string">'./build/Debug/addon.node'</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="Linking-to-Node-js’-own-dependencies"><a href="#Linking-to-Node-js’-own-dependencies" class="headerlink" title="Linking to Node.js’ own dependencies"></a>Linking to Node.js’ own dependencies</h3><p>Node.js 使用了一些静态链接库，比如 V8 引擎、libuv 和 OpenSSL。<br>所有的插件都需要链接到 V8，也可能链接到任何其他依赖。<br>通常情况下，只要简单地包含相应的 <code>#include &lt;...&gt;</code> 声明（如 <code>#include &lt;v8.h&gt;</code>），则 <code>node-gyp</code> 会自动定位到相应的头文件。<br>但是也有一些注意事项需要注意：</p>
+<ul>
+<li><p>当 <code>node-gyp</code> 运行时，它会检测指定的 Node.js 发行版本，并下载完整的源代码包或只是头文件。<br>如果下载了完整的源代码，则插件对全套的 Node.js 依赖有完全的访问权限。<br>如果只下载了 Node.js 的文件头，则只有 Node.js 导出的符号可用。</p>
+</li>
+<li><p><code>node-gyp</code> 可使用指向一个本地 Node.js 源代码镜像的 <code>--nodedir</code> 标志来运行。<br>如果使用该选项，则插件有全套依赖的访问权限。</p>
+</li>
+</ul>
+<h3 id="Loading-Addons-using-require"><a href="#Loading-Addons-using-require" class="headerlink" title="Loading Addons using require()"></a>Loading Addons using require()</h3><p>编译后的二进制插件的文件扩展名是 <code>.node</code>（而不是 <code>.dll</code> 或 <code>.so</code>）。<br><a href="modules.html#modules_require"><code>require()</code></a> 函数用于查找具有 <code>.node</code> 文件扩展名的文件，并初始化为动态链接库。</p>
+<p>当调用 <a href="modules.html#modules_require"><code>require()</code></a> 时，<code>.node</code> 拓展名通常可被省略，Node.js 仍会找到并初始化该插件。<br>注意，Node.js 会优先尝试查找并加载同名的模块或 JavaScript 文件。<br>例如，如果与二进制的 <code>addon.node</code> 同一目录下有一个 <code>addon.js</code> 文件，则 <a href="modules.html#modules_require"><code>require(&#39;addon&#39;)</code></a> 会优先加载 <code>addon.js</code> 文件。</p>
+<h2 id="Native-Abstractions-for-Node-js"><a href="#Native-Abstractions-for-Node-js" class="headerlink" title="Native Abstractions for Node.js"></a>Native Abstractions for Node.js</h2><p>文档中所示的每个例子都直接使用 Node.js 和 V8 的 API 来实现插件。<br>V8 的 API 可能并且已经与下一个 V8 的发行版本有显著的变化。<br>伴随着每次变化，插件为了能够继续工作，可能需要进行更新和重新编译。<br>Node.js 的发布计划会尽量减少这种变化的频率和影响，但 Node.js 目前可以确保 V8 API 的稳定性。</p>
+<p><a href="https://github.com/nodejs/nan" target="_blank" rel="external">Node.js 的原生抽象</a>（或称为 <code>nan</code>）提供了一组工具，建议插件开发者使用这些工具来保持插件在过往与将来的 V8 和 Node.js 的版本之间的兼容性。<br>查看 <a href="https://github.com/nodejs/nan/tree/master/examples/" target="_blank" rel="external"><code>nan</code> 示例</a>了解它是如何被使用的。</p>
+<h2 id="N-API"><a href="#N-API" class="headerlink" title="N-API"></a>N-API</h2><blockquote>
+<p>Stability: 1 - Experimental</p>
+</blockquote>
+<p>N-API is an API for building native Addons. It is independent from<br>the underlying JavaScript runtime (ex V8) and is maintained as part of<br>Node.js itself. This API will be Application Binary Interface (ABI) stable<br>across version of Node.js. It is intended to insulate Addons from<br>changes in the underlying JavaScript engine and allow modules<br>compiled for one version to run on later versions of Node.js without<br>recompilation. Addons are built/packaged with the same approach/tools<br>outlined in this document (node-gyp, etc.). The only difference is the<br>set of APIs that are used by the native code. Instead of using the V8<br>or <a href="https://github.com/nodejs/nan" target="_blank" rel="external">Native Abstractions for Node.js</a> APIs, the functions available<br>in the N-API are used.</p>
+<p>The functions available and how to use them are documented in the<br>section titled <a href="n-api.html">C/C++ Addons - N-API</a>.</p>
+<h2 id="Addon-examples"><a href="#Addon-examples" class="headerlink" title="Addon examples"></a>Addon examples</h2><p>以下是一些插件示例，用于帮助开发者入门。<br>这些例子使用了 V8 的 API。<br>查看在线的 <a href="https://v8docs.nodesource.com/" target="_blank" rel="external">V8 文档</a>有助于了解各种 V8 调用，V8 的<a href="https://github.com/v8/v8/wiki/Embedder&#39;s%20Guide" target="_blank" rel="external">嵌入器指南</a>解释了句柄、作用域和函数模板等的一些概念。</p>
+<p>每个示例都使用以下的 <code>binding.gyp</code> 文件：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"targets"</span>: [</div><div class="line">    &#123;</div><div class="line">      <span class="attr">"target_name"</span>: <span class="string">"addon"</span>,</div><div class="line">      <span class="attr">"sources"</span>: [ <span class="string">"addon.cc"</span> ]</div><div class="line">    &#125;</div><div class="line">  ]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>如果有一个以上的 <code>.cc</code> 文件，则只需添加额外的文件名到 <code>sources</code> 数组。<br>例如：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">"sources": ["addon.cc", "myexample.cc"]</div></pre></td></tr></table></figure>
+<p>当 <code>binding.gyp</code> 文件准备就绪，则插件示例可以使用 <code>node-gyp</code> 进行配置和构建：</p>
+<figure class="highlight console"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span> node-gyp configure build</div></pre></td></tr></table></figure>
+<h3 id="Function-arguments"><a href="#Function-arguments" class="headerlink" title="Function arguments"></a>Function arguments</h3><p>插件通常会开放一些对象和函数，供运行在 Node.js 中的 JavaScript 访问。<br>当从 JavaScript 调用函数时，输入参数和返回值必须与 C/C++ 代码相互映射。</p>
+<p>以下例子描述了如何读取从 JavaScript 传入的函数参数与如何返回结果：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// addon.cc</span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;node.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="keyword">namespace</span> demo &#123;</div><div class="line"></div><div class="line"><span class="keyword">using</span> v8::Exception;</div><div class="line"><span class="keyword">using</span> v8::FunctionCallbackInfo;</div><div class="line"><span class="keyword">using</span> v8::Isolate;</div><div class="line"><span class="keyword">using</span> v8::Local;</div><div class="line"><span class="keyword">using</span> v8::Number;</div><div class="line"><span class="keyword">using</span> v8::Object;</div><div class="line"><span class="keyword">using</span> v8::String;</div><div class="line"><span class="keyword">using</span> v8::Value;</div><div class="line"></div><div class="line"><span class="comment">// 这是 "add" 方法的实现</span></div><div class="line"><span class="comment">// 输入参数使用 const FunctionCallbackInfo&lt;Value&gt;&amp; args 结构传入</span></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">Add</span><span class="params">(<span class="keyword">const</span> FunctionCallbackInfo&lt;Value&gt;&amp; args)</span> </span>&#123;</div><div class="line">  Isolate* isolate = args.GetIsolate();</div><div class="line"></div><div class="line">  <span class="comment">// 检查传入的参数的个数</span></div><div class="line">  <span class="keyword">if</span> (args.Length() &lt; <span class="number">2</span>) &#123;</div><div class="line">    <span class="comment">// 抛出一个错误并传回到 JavaScript</span></div><div class="line">    isolate-&gt;ThrowException(Exception::TypeError(</div><div class="line">        String::NewFromUtf8(isolate, <span class="string">"参数的数量错误"</span>)));</div><div class="line">    <span class="keyword">return</span>;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="comment">// 检查参数的类型</span></div><div class="line">  <span class="keyword">if</span> (!args[<span class="number">0</span>]-&gt;IsNumber() || !args[<span class="number">1</span>]-&gt;IsNumber()) &#123;</div><div class="line">    isolate-&gt;ThrowException(Exception::TypeError(</div><div class="line">        String::NewFromUtf8(isolate, <span class="string">"参数错误"</span>)));</div><div class="line">    <span class="keyword">return</span>;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="comment">// 执行操作</span></div><div class="line">  <span class="keyword">double</span> value = args[<span class="number">0</span>]-&gt;NumberValue() + args[<span class="number">1</span>]-&gt;NumberValue();</div><div class="line">  Local&lt;Number&gt; num = Number::New(isolate, value);</div><div class="line"></div><div class="line">  <span class="comment">// 设置返回值</span></div><div class="line">  args.GetReturnValue().Set(num);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">Init</span><span class="params">(Local&lt;Object&gt; exports)</span> </span>&#123;</div><div class="line">  NODE_SET_METHOD(exports, <span class="string">"add"</span>, Add);</div><div class="line">&#125;</div><div class="line"></div><div class="line">NODE_MODULE(addon, Init)</div><div class="line"></div><div class="line">&#125;  <span class="comment">// namespace demo</span></div></pre></td></tr></table></figure>
+<p>但已被编译，示例插件就可以在 Node.js 中引入和使用：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// test.js</span></div><div class="line"><span class="keyword">const</span> addon = <span class="built_in">require</span>(<span class="string">'./build/Release/addon'</span>);</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="string">'This should be eight:'</span>, addon.add(<span class="number">3</span>, <span class="number">5</span>));</div></pre></td></tr></table></figure>
+<h3 id="Callbacks"><a href="#Callbacks" class="headerlink" title="Callbacks"></a>Callbacks</h3><p>把 JavaScript 函数传入到一个 C++ 函数并在那里执行它们，这在插件里是常见的做法。<br>以下例子描述了如何调用这些回调：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// addon.cc</span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;node.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="keyword">namespace</span> demo &#123;</div><div class="line"></div><div class="line"><span class="keyword">using</span> v8::Function;</div><div class="line"><span class="keyword">using</span> v8::FunctionCallbackInfo;</div><div class="line"><span class="keyword">using</span> v8::Isolate;</div><div class="line"><span class="keyword">using</span> v8::Local;</div><div class="line"><span class="keyword">using</span> v8::Null;</div><div class="line"><span class="keyword">using</span> v8::Object;</div><div class="line"><span class="keyword">using</span> v8::String;</div><div class="line"><span class="keyword">using</span> v8::Value;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">RunCallback</span><span class="params">(<span class="keyword">const</span> FunctionCallbackInfo&lt;Value&gt;&amp; args)</span> </span>&#123;</div><div class="line">  Isolate* isolate = args.GetIsolate();</div><div class="line">  Local&lt;Function&gt; cb = Local&lt;Function&gt;::Cast(args[<span class="number">0</span>]);</div><div class="line">  <span class="keyword">const</span> <span class="keyword">unsigned</span> argc = <span class="number">1</span>;</div><div class="line">  Local&lt;Value&gt; argv[argc] = &#123; String::NewFromUtf8(isolate, <span class="string">"hello world"</span>) &#125;;</div><div class="line">  cb-&gt;Call(Null(isolate), argc, argv);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">Init</span><span class="params">(Local&lt;Object&gt; exports, Local&lt;Object&gt; <span class="keyword">module</span>)</span> </span>&#123;</div><div class="line">  NODE_SET_METHOD(<span class="keyword">module</span>, <span class="string">"exports"</span>, RunCallback);</div><div class="line">&#125;</div><div class="line"></div><div class="line">NODE_MODULE(addon, Init)</div><div class="line"></div><div class="line">&#125;  <span class="comment">// namespace demo</span></div></pre></td></tr></table></figure>
+<p>注意，该例子使用了一个带有两个参数的 <code>Init()</code>，它接收完整的 <code>module</code> 对象作为第二个参数。<br>这使得插件可以用一个单一的函数完全地重写 <code>exports</code>，而不是添加函数作为 <code>exports</code> 的属性。</p>
+<p>为了验证它，运行以下 JavaScript：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// test.js</span></div><div class="line"><span class="keyword">const</span> addon = <span class="built_in">require</span>(<span class="string">'./build/Release/addon'</span>);</div><div class="line"></div><div class="line">addon(<span class="function">(<span class="params">msg</span>) =&gt;</span> &#123;</div><div class="line">  <span class="built_in">console</span>.log(msg);</div><div class="line"><span class="comment">// 打印: 'hello world'</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>注意，在这个例子中，回调函数是被同步地调用。</p>
+<h3 id="Object-factory"><a href="#Object-factory" class="headerlink" title="Object factory"></a>Object factory</h3><p>插件可从 C++ 函数中创建并返回新的对象，如以下例子所示。<br>一个带有 <code>msg</code> 属性的对象被创建并返回，该属性会输出传入 <code>createObject()</code> 的字符串：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// addon.cc</span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;node.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="keyword">namespace</span> demo &#123;</div><div class="line"></div><div class="line"><span class="keyword">using</span> v8::FunctionCallbackInfo;</div><div class="line"><span class="keyword">using</span> v8::Isolate;</div><div class="line"><span class="keyword">using</span> v8::Local;</div><div class="line"><span class="keyword">using</span> v8::Object;</div><div class="line"><span class="keyword">using</span> v8::String;</div><div class="line"><span class="keyword">using</span> v8::Value;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">CreateObject</span><span class="params">(<span class="keyword">const</span> FunctionCallbackInfo&lt;Value&gt;&amp; args)</span> </span>&#123;</div><div class="line">  Isolate* isolate = args.GetIsolate();</div><div class="line"></div><div class="line">  Local&lt;Object&gt; obj = Object::New(isolate);</div><div class="line">  obj-&gt;Set(String::NewFromUtf8(isolate, <span class="string">"msg"</span>), args[<span class="number">0</span>]-&gt;ToString());</div><div class="line"></div><div class="line">  args.GetReturnValue().Set(obj);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">Init</span><span class="params">(Local&lt;Object&gt; exports, Local&lt;Object&gt; <span class="keyword">module</span>)</span> </span>&#123;</div><div class="line">  NODE_SET_METHOD(<span class="keyword">module</span>, <span class="string">"exports"</span>, CreateObject);</div><div class="line">&#125;</div><div class="line"></div><div class="line">NODE_MODULE(addon, Init)</div><div class="line"></div><div class="line">&#125;  <span class="comment">// namespace demo</span></div></pre></td></tr></table></figure>
+<p>在 JavaScript 中测试它：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// test.js</span></div><div class="line"><span class="keyword">const</span> addon = <span class="built_in">require</span>(<span class="string">'./build/Release/addon'</span>);</div><div class="line"></div><div class="line"><span class="keyword">const</span> obj1 = addon(<span class="string">'hello'</span>);</div><div class="line"><span class="keyword">const</span> obj2 = addon(<span class="string">'world'</span>);</div><div class="line"><span class="built_in">console</span>.log(obj1.msg, obj2.msg);</div><div class="line"><span class="comment">// 打印: 'hello world'</span></div></pre></td></tr></table></figure>
+<h3 id="Function-factory"><a href="#Function-factory" class="headerlink" title="Function factory"></a>Function factory</h3><p>另一种常见情况是创建 JavaScript 函数来包装 C++ 函数，并返回到 JavaScript：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// addon.cc</span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;node.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="keyword">namespace</span> demo &#123;</div><div class="line"></div><div class="line"><span class="keyword">using</span> v8::Function;</div><div class="line"><span class="keyword">using</span> v8::FunctionCallbackInfo;</div><div class="line"><span class="keyword">using</span> v8::FunctionTemplate;</div><div class="line"><span class="keyword">using</span> v8::Isolate;</div><div class="line"><span class="keyword">using</span> v8::Local;</div><div class="line"><span class="keyword">using</span> v8::Object;</div><div class="line"><span class="keyword">using</span> v8::String;</div><div class="line"><span class="keyword">using</span> v8::Value;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">MyFunction</span><span class="params">(<span class="keyword">const</span> FunctionCallbackInfo&lt;Value&gt;&amp; args)</span> </span>&#123;</div><div class="line">  Isolate* isolate = args.GetIsolate();</div><div class="line">  args.GetReturnValue().Set(String::NewFromUtf8(isolate, <span class="string">"hello world"</span>));</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">CreateFunction</span><span class="params">(<span class="keyword">const</span> FunctionCallbackInfo&lt;Value&gt;&amp; args)</span> </span>&#123;</div><div class="line">  Isolate* isolate = args.GetIsolate();</div><div class="line"></div><div class="line">  Local&lt;FunctionTemplate&gt; tpl = FunctionTemplate::New(isolate, MyFunction);</div><div class="line">  Local&lt;Function&gt; fn = tpl-&gt;GetFunction();</div><div class="line"></div><div class="line">  <span class="comment">// 可以省略这步使它匿名</span></div><div class="line">  fn-&gt;SetName(String::NewFromUtf8(isolate, <span class="string">"theFunction"</span>));</div><div class="line"></div><div class="line">  args.GetReturnValue().Set(fn);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">Init</span><span class="params">(Local&lt;Object&gt; exports, Local&lt;Object&gt; <span class="keyword">module</span>)</span> </span>&#123;</div><div class="line">  NODE_SET_METHOD(<span class="keyword">module</span>, <span class="string">"exports"</span>, CreateFunction);</div><div class="line">&#125;</div><div class="line"></div><div class="line">NODE_MODULE(addon, Init)</div><div class="line"></div><div class="line">&#125;  <span class="comment">// namespace demo</span></div></pre></td></tr></table></figure>
+<p>测试它：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// test.js</span></div><div class="line"><span class="keyword">const</span> addon = <span class="built_in">require</span>(<span class="string">'./build/Release/addon'</span>);</div><div class="line"></div><div class="line"><span class="keyword">const</span> fn = addon();</div><div class="line"><span class="built_in">console</span>.log(fn());</div><div class="line"><span class="comment">// 打印: 'hello world'</span></div></pre></td></tr></table></figure>
+<h3 id="Wrapping-C-objects"><a href="#Wrapping-C-objects" class="headerlink" title="Wrapping C++ objects"></a>Wrapping C++ objects</h3><p>也可以包装 C++ 对象/类使其可以使用 JavaScript 的 <code>new</code> 操作来创建新的实例：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// addon.cc</span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;node.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"myobject.h"</span></span></div><div class="line"></div><div class="line"><span class="keyword">namespace</span> demo &#123;</div><div class="line"></div><div class="line"><span class="keyword">using</span> v8::Local;</div><div class="line"><span class="keyword">using</span> v8::Object;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">InitAll</span><span class="params">(Local&lt;Object&gt; exports)</span> </span>&#123;</div><div class="line">  MyObject::Init(exports);</div><div class="line">&#125;</div><div class="line"></div><div class="line">NODE_MODULE(addon, InitAll)</div><div class="line"></div><div class="line">&#125;  <span class="comment">// namespace demo</span></div></pre></td></tr></table></figure>
+<p>然后，在 <code>myobject.h</code> 中，包装类继承自 <code>node::ObjectWrap</code>：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// myobject.h</span></div><div class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> MYOBJECT_H</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> MYOBJECT_H</span></div><div class="line"></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;node.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;node_object_wrap.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="keyword">namespace</span> demo &#123;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyObject</span> :</span> <span class="keyword">public</span> node::ObjectWrap &#123;</div><div class="line"> <span class="keyword">public</span>:</div><div class="line">  <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Init</span><span class="params">(v8::Local&lt;v8::Object&gt; exports)</span></span>;</div><div class="line"></div><div class="line"> <span class="keyword">private</span>:</div><div class="line">  <span class="function"><span class="keyword">explicit</span> <span class="title">MyObject</span><span class="params">(<span class="keyword">double</span> value = <span class="number">0</span>)</span></span>;</div><div class="line">  ~MyObject();</div><div class="line"></div><div class="line">  <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">New</span><span class="params">(<span class="keyword">const</span> v8::FunctionCallbackInfo&lt;v8::Value&gt;&amp; args)</span></span>;</div><div class="line">  <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">PlusOne</span><span class="params">(<span class="keyword">const</span> v8::FunctionCallbackInfo&lt;v8::Value&gt;&amp; args)</span></span>;</div><div class="line">  <span class="keyword">static</span> v8::Persistent&lt;v8::Function&gt; constructor;</div><div class="line">  <span class="keyword">double</span> value_;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">&#125;  <span class="comment">// namespace demo</span></div><div class="line"></div><div class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></div></pre></td></tr></table></figure>
+<p>在 <code>myobject.cc</code> 中，实现要被开放的各种方法。<br>下面，通过把 <code>plusOne()</code> 添加到构造函数的原型来开放它：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// myobject.cc</span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"myobject.h"</span></span></div><div class="line"></div><div class="line"><span class="keyword">namespace</span> demo &#123;</div><div class="line"></div><div class="line"><span class="keyword">using</span> v8::Context;</div><div class="line"><span class="keyword">using</span> v8::Function;</div><div class="line"><span class="keyword">using</span> v8::FunctionCallbackInfo;</div><div class="line"><span class="keyword">using</span> v8::FunctionTemplate;</div><div class="line"><span class="keyword">using</span> v8::Isolate;</div><div class="line"><span class="keyword">using</span> v8::Local;</div><div class="line"><span class="keyword">using</span> v8::Number;</div><div class="line"><span class="keyword">using</span> v8::Object;</div><div class="line"><span class="keyword">using</span> v8::Persistent;</div><div class="line"><span class="keyword">using</span> v8::String;</div><div class="line"><span class="keyword">using</span> v8::Value;</div><div class="line"></div><div class="line">Persistent&lt;Function&gt; MyObject::constructor;</div><div class="line"></div><div class="line">MyObject::MyObject(<span class="keyword">double</span> value) : value_(value) &#123;</div><div class="line">&#125;</div><div class="line"></div><div class="line">MyObject::~MyObject() &#123;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">void</span> MyObject::Init(Local&lt;Object&gt; exports) &#123;</div><div class="line">  Isolate* isolate = exports-&gt;GetIsolate();</div><div class="line"></div><div class="line">  <span class="comment">// 准备构造函数模版</span></div><div class="line">  Local&lt;FunctionTemplate&gt; tpl = FunctionTemplate::New(isolate, New);</div><div class="line">  tpl-&gt;SetClassName(String::NewFromUtf8(isolate, <span class="string">"MyObject"</span>));</div><div class="line">  tpl-&gt;InstanceTemplate()-&gt;SetInternalFieldCount(<span class="number">1</span>);</div><div class="line"></div><div class="line">  <span class="comment">// 原型</span></div><div class="line">  NODE_SET_PROTOTYPE_METHOD(tpl, <span class="string">"plusOne"</span>, PlusOne);</div><div class="line"></div><div class="line">  constructor.Reset(isolate, tpl-&gt;GetFunction());</div><div class="line">  exports-&gt;Set(String::NewFromUtf8(isolate, <span class="string">"MyObject"</span>),</div><div class="line">               tpl-&gt;GetFunction());</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">void</span> MyObject::New(<span class="keyword">const</span> FunctionCallbackInfo&lt;Value&gt;&amp; args) &#123;</div><div class="line">  Isolate* isolate = args.GetIsolate();</div><div class="line"></div><div class="line">  <span class="keyword">if</span> (args.IsConstructCall()) &#123;</div><div class="line">    <span class="comment">// 像构造函数一样调用：`new MyObject(...)`</span></div><div class="line">    <span class="keyword">double</span> value = args[<span class="number">0</span>]-&gt;IsUndefined() ? <span class="number">0</span> : args[<span class="number">0</span>]-&gt;NumberValue();</div><div class="line">    MyObject* obj = <span class="keyword">new</span> MyObject(value);</div><div class="line">    obj-&gt;Wrap(args.This());</div><div class="line">    args.GetReturnValue().Set(args.This());</div><div class="line">  &#125; <span class="keyword">else</span> &#123;</div><div class="line">    <span class="comment">// 像普通方法 `MyObject(...)` 一样调用，转为构造调用。</span></div><div class="line">    <span class="keyword">const</span> <span class="keyword">int</span> argc = <span class="number">1</span>;</div><div class="line">    Local&lt;Value&gt; argv[argc] = &#123; args[<span class="number">0</span>] &#125;;</div><div class="line">    Local&lt;Context&gt; context = isolate-&gt;GetCurrentContext();</div><div class="line">    Local&lt;Function&gt; cons = Local&lt;Function&gt;::New(isolate, constructor);</div><div class="line">    Local&lt;Object&gt; result =</div><div class="line">        cons-&gt;NewInstance(context, argc, argv).ToLocalChecked();</div><div class="line">    args.GetReturnValue().Set(result);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">void</span> MyObject::PlusOne(<span class="keyword">const</span> FunctionCallbackInfo&lt;Value&gt;&amp; args) &#123;</div><div class="line">  Isolate* isolate = args.GetIsolate();</div><div class="line"></div><div class="line">  MyObject* obj = ObjectWrap::Unwrap&lt;MyObject&gt;(args.Holder());</div><div class="line">  obj-&gt;value_ += <span class="number">1</span>;</div><div class="line"></div><div class="line">  args.GetReturnValue().Set(Number::New(isolate, obj-&gt;value_));</div><div class="line">&#125;</div><div class="line"></div><div class="line">&#125;  <span class="comment">// namespace demo</span></div></pre></td></tr></table></figure>
+<p>要构建这个例子，<code>myobject.cc</code> 文件必须被添加到 <code>binding.gyp</code>：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"targets"</span>: [</div><div class="line">    &#123;</div><div class="line">      <span class="attr">"target_name"</span>: <span class="string">"addon"</span>,</div><div class="line">      <span class="attr">"sources"</span>: [</div><div class="line">        <span class="string">"addon.cc"</span>,</div><div class="line">        <span class="string">"myobject.cc"</span></div><div class="line">      ]</div><div class="line">    &#125;</div><div class="line">  ]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>测试：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// test.js</span></div><div class="line"><span class="keyword">const</span> addon = <span class="built_in">require</span>(<span class="string">'./build/Release/addon'</span>);</div><div class="line"></div><div class="line"><span class="keyword">const</span> obj = <span class="keyword">new</span> addon.MyObject(<span class="number">10</span>);</div><div class="line"><span class="built_in">console</span>.log(obj.plusOne());</div><div class="line"><span class="comment">// 打印: 11</span></div><div class="line"><span class="built_in">console</span>.log(obj.plusOne());</div><div class="line"><span class="comment">// 打印: 12</span></div><div class="line"><span class="built_in">console</span>.log(obj.plusOne());</div><div class="line"><span class="comment">// 打印: 13</span></div></pre></td></tr></table></figure>
+<h3 id="Factory-of-wrapped-objects"><a href="#Factory-of-wrapped-objects" class="headerlink" title="Factory of wrapped objects"></a>Factory of wrapped objects</h3><p>也可以使用一个工厂模式，避免显式地使用 JavaScript 的 <code>new</code> 操作来创建对象实例：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> obj = addon.createObject();</div><div class="line"><span class="comment">// 而不是：</span></div><div class="line"><span class="comment">// const obj = new addon.Object();</span></div></pre></td></tr></table></figure>
+<p>首先，在 <code>addon.cc</code> 中实现 <code>createObject()</code> 方法：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// addon.cc</span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;node.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"myobject.h"</span></span></div><div class="line"></div><div class="line"><span class="keyword">namespace</span> demo &#123;</div><div class="line"></div><div class="line"><span class="keyword">using</span> v8::FunctionCallbackInfo;</div><div class="line"><span class="keyword">using</span> v8::Isolate;</div><div class="line"><span class="keyword">using</span> v8::Local;</div><div class="line"><span class="keyword">using</span> v8::Object;</div><div class="line"><span class="keyword">using</span> v8::String;</div><div class="line"><span class="keyword">using</span> v8::Value;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">CreateObject</span><span class="params">(<span class="keyword">const</span> FunctionCallbackInfo&lt;Value&gt;&amp; args)</span> </span>&#123;</div><div class="line">  MyObject::NewInstance(args);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">InitAll</span><span class="params">(Local&lt;Object&gt; exports, Local&lt;Object&gt; <span class="keyword">module</span>)</span> </span>&#123;</div><div class="line">  MyObject::Init(exports-&gt;GetIsolate());</div><div class="line"></div><div class="line">  NODE_SET_METHOD(<span class="keyword">module</span>, <span class="string">"exports"</span>, CreateObject);</div><div class="line">&#125;</div><div class="line"></div><div class="line">NODE_MODULE(addon, InitAll)</div><div class="line"></div><div class="line">&#125;  <span class="comment">// namespace demo</span></div></pre></td></tr></table></figure>
+<p>在 <code>myobject.h</code> 中，添加静态方法 <code>NewInstance()</code> 来处理实例化对象。<br>这个方法用来代替在 JavaScript 中使用 <code>new</code>：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// myobject.h</span></div><div class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> MYOBJECT_H</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> MYOBJECT_H</span></div><div class="line"></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;node.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;node_object_wrap.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="keyword">namespace</span> demo &#123;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyObject</span> :</span> <span class="keyword">public</span> node::ObjectWrap &#123;</div><div class="line"> <span class="keyword">public</span>:</div><div class="line">  <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Init</span><span class="params">(v8::Isolate* isolate)</span></span>;</div><div class="line">  <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">NewInstance</span><span class="params">(<span class="keyword">const</span> v8::FunctionCallbackInfo&lt;v8::Value&gt;&amp; args)</span></span>;</div><div class="line"></div><div class="line"> <span class="keyword">private</span>:</div><div class="line">  <span class="function"><span class="keyword">explicit</span> <span class="title">MyObject</span><span class="params">(<span class="keyword">double</span> value = <span class="number">0</span>)</span></span>;</div><div class="line">  ~MyObject();</div><div class="line"></div><div class="line">  <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">New</span><span class="params">(<span class="keyword">const</span> v8::FunctionCallbackInfo&lt;v8::Value&gt;&amp; args)</span></span>;</div><div class="line">  <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">PlusOne</span><span class="params">(<span class="keyword">const</span> v8::FunctionCallbackInfo&lt;v8::Value&gt;&amp; args)</span></span>;</div><div class="line">  <span class="keyword">static</span> v8::Persistent&lt;v8::Function&gt; constructor;</div><div class="line">  <span class="keyword">double</span> value_;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">&#125;  <span class="comment">// namespace demo</span></div><div class="line"></div><div class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></div></pre></td></tr></table></figure>
+<p><code>myobject.cc</code> 中的实现类似与之前的例子：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// myobject.cc</span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;node.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"myobject.h"</span></span></div><div class="line"></div><div class="line"><span class="keyword">namespace</span> demo &#123;</div><div class="line"></div><div class="line"><span class="keyword">using</span> v8::Context;</div><div class="line"><span class="keyword">using</span> v8::Function;</div><div class="line"><span class="keyword">using</span> v8::FunctionCallbackInfo;</div><div class="line"><span class="keyword">using</span> v8::FunctionTemplate;</div><div class="line"><span class="keyword">using</span> v8::Isolate;</div><div class="line"><span class="keyword">using</span> v8::Local;</div><div class="line"><span class="keyword">using</span> v8::Number;</div><div class="line"><span class="keyword">using</span> v8::Object;</div><div class="line"><span class="keyword">using</span> v8::Persistent;</div><div class="line"><span class="keyword">using</span> v8::String;</div><div class="line"><span class="keyword">using</span> v8::Value;</div><div class="line"></div><div class="line">Persistent&lt;Function&gt; MyObject::constructor;</div><div class="line"></div><div class="line">MyObject::MyObject(<span class="keyword">double</span> value) : value_(value) &#123;</div><div class="line">&#125;</div><div class="line"></div><div class="line">MyObject::~MyObject() &#123;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">void</span> MyObject::Init(Isolate* isolate) &#123;</div><div class="line">  <span class="comment">// 准备构造函数模版</span></div><div class="line">  Local&lt;FunctionTemplate&gt; tpl = FunctionTemplate::New(isolate, New);</div><div class="line">  tpl-&gt;SetClassName(String::NewFromUtf8(isolate, <span class="string">"MyObject"</span>));</div><div class="line">  tpl-&gt;InstanceTemplate()-&gt;SetInternalFieldCount(<span class="number">1</span>);</div><div class="line"></div><div class="line">  <span class="comment">// 原型</span></div><div class="line">  NODE_SET_PROTOTYPE_METHOD(tpl, <span class="string">"plusOne"</span>, PlusOne);</div><div class="line"></div><div class="line">  constructor.Reset(isolate, tpl-&gt;GetFunction());</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">void</span> MyObject::New(<span class="keyword">const</span> FunctionCallbackInfo&lt;Value&gt;&amp; args) &#123;</div><div class="line">  Isolate* isolate = args.GetIsolate();</div><div class="line"></div><div class="line">  <span class="keyword">if</span> (args.IsConstructCall()) &#123;</div><div class="line">    <span class="comment">// 像构造函数一样调用：`new MyObject(...)`</span></div><div class="line">    <span class="keyword">double</span> value = args[<span class="number">0</span>]-&gt;IsUndefined() ? <span class="number">0</span> : args[<span class="number">0</span>]-&gt;NumberValue();</div><div class="line">    MyObject* obj = <span class="keyword">new</span> MyObject(value);</div><div class="line">    obj-&gt;Wrap(args.This());</div><div class="line">    args.GetReturnValue().Set(args.This());</div><div class="line">  &#125; <span class="keyword">else</span> &#123;</div><div class="line">    <span class="comment">// 像普通方法 `MyObject(...)` 一样调用，转为构造调用。</span></div><div class="line">    <span class="keyword">const</span> <span class="keyword">int</span> argc = <span class="number">1</span>;</div><div class="line">    Local&lt;Value&gt; argv[argc] = &#123; args[<span class="number">0</span>] &#125;;</div><div class="line">    Local&lt;Function&gt; cons = Local&lt;Function&gt;::New(isolate, constructor);</div><div class="line">    Local&lt;Context&gt; context = isolate-&gt;GetCurrentContext();</div><div class="line">    Local&lt;Object&gt; instance =</div><div class="line">        cons-&gt;NewInstance(context, argc, argv).ToLocalChecked();</div><div class="line">    args.GetReturnValue().Set(instance);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">void</span> MyObject::NewInstance(<span class="keyword">const</span> FunctionCallbackInfo&lt;Value&gt;&amp; args) &#123;</div><div class="line">  Isolate* isolate = args.GetIsolate();</div><div class="line"></div><div class="line">  <span class="keyword">const</span> <span class="keyword">unsigned</span> argc = <span class="number">1</span>;</div><div class="line">  Local&lt;Value&gt; argv[argc] = &#123; args[<span class="number">0</span>] &#125;;</div><div class="line">  Local&lt;Function&gt; cons = Local&lt;Function&gt;::New(isolate, constructor);</div><div class="line">  Local&lt;Context&gt; context = isolate-&gt;GetCurrentContext();</div><div class="line">  Local&lt;Object&gt; instance =</div><div class="line">      cons-&gt;NewInstance(context, argc, argv).ToLocalChecked();</div><div class="line"></div><div class="line">  args.GetReturnValue().Set(instance);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">void</span> MyObject::PlusOne(<span class="keyword">const</span> FunctionCallbackInfo&lt;Value&gt;&amp; args) &#123;</div><div class="line">  Isolate* isolate = args.GetIsolate();</div><div class="line"></div><div class="line">  MyObject* obj = ObjectWrap::Unwrap&lt;MyObject&gt;(args.Holder());</div><div class="line">  obj-&gt;value_ += <span class="number">1</span>;</div><div class="line"></div><div class="line">  args.GetReturnValue().Set(Number::New(isolate, obj-&gt;value_));</div><div class="line">&#125;</div><div class="line"></div><div class="line">&#125;  <span class="comment">// namespace demo</span></div></pre></td></tr></table></figure>
+<p>要构建这个例子，<code>myobject.cc</code> 文件必须被添加到 <code>binding.gyp</code>：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"targets"</span>: [</div><div class="line">    &#123;</div><div class="line">      <span class="attr">"target_name"</span>: <span class="string">"addon"</span>,</div><div class="line">      <span class="attr">"sources"</span>: [</div><div class="line">        <span class="string">"addon.cc"</span>,</div><div class="line">        <span class="string">"myobject.cc"</span></div><div class="line">      ]</div><div class="line">    &#125;</div><div class="line">  ]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>测试：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// test.js</span></div><div class="line"><span class="keyword">const</span> createObject = <span class="built_in">require</span>(<span class="string">'./build/Release/addon'</span>);</div><div class="line"></div><div class="line"><span class="keyword">const</span> obj = createObject(<span class="number">10</span>);</div><div class="line"><span class="built_in">console</span>.log(obj.plusOne());</div><div class="line"><span class="comment">// 打印: 11</span></div><div class="line"><span class="built_in">console</span>.log(obj.plusOne());</div><div class="line"><span class="comment">// 打印: 12</span></div><div class="line"><span class="built_in">console</span>.log(obj.plusOne());</div><div class="line"><span class="comment">// 打印: 13</span></div><div class="line"></div><div class="line"><span class="keyword">const</span> obj2 = createObject(<span class="number">20</span>);</div><div class="line"><span class="built_in">console</span>.log(obj2.plusOne());</div><div class="line"><span class="comment">// 打印: 21</span></div><div class="line"><span class="built_in">console</span>.log(obj2.plusOne());</div><div class="line"><span class="comment">// 打印: 22</span></div><div class="line"><span class="built_in">console</span>.log(obj2.plusOne());</div><div class="line"><span class="comment">// 打印: 23</span></div></pre></td></tr></table></figure>
+<h3 id="Passing-wrapped-objects-around"><a href="#Passing-wrapped-objects-around" class="headerlink" title="Passing wrapped objects around"></a>Passing wrapped objects around</h3><p>除了包装和返回 C++ 对象，也可以通过使用 Node.js 的辅助函数 <code>node::ObjectWrap::Unwrap</code> 进行去包装来传递包装的对象。<br>以下例子展示了一个 <code>add()</code> 函数，它可以把两个 <code>MyObject</code> 对象作为输入参数：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// addon.cc</span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;node.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;node_object_wrap.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"myobject.h"</span></span></div><div class="line"></div><div class="line"><span class="keyword">namespace</span> demo &#123;</div><div class="line"></div><div class="line"><span class="keyword">using</span> v8::FunctionCallbackInfo;</div><div class="line"><span class="keyword">using</span> v8::Isolate;</div><div class="line"><span class="keyword">using</span> v8::Local;</div><div class="line"><span class="keyword">using</span> v8::Number;</div><div class="line"><span class="keyword">using</span> v8::Object;</div><div class="line"><span class="keyword">using</span> v8::String;</div><div class="line"><span class="keyword">using</span> v8::Value;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">CreateObject</span><span class="params">(<span class="keyword">const</span> FunctionCallbackInfo&lt;Value&gt;&amp; args)</span> </span>&#123;</div><div class="line">  MyObject::NewInstance(args);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">Add</span><span class="params">(<span class="keyword">const</span> FunctionCallbackInfo&lt;Value&gt;&amp; args)</span> </span>&#123;</div><div class="line">  Isolate* isolate = args.GetIsolate();</div><div class="line"></div><div class="line">  MyObject* obj1 = node::ObjectWrap::Unwrap&lt;MyObject&gt;(</div><div class="line">      args[<span class="number">0</span>]-&gt;ToObject());</div><div class="line">  MyObject* obj2 = node::ObjectWrap::Unwrap&lt;MyObject&gt;(</div><div class="line">      args[<span class="number">1</span>]-&gt;ToObject());</div><div class="line"></div><div class="line">  <span class="keyword">double</span> sum = obj1-&gt;value() + obj2-&gt;value();</div><div class="line">  args.GetReturnValue().Set(Number::New(isolate, sum));</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">InitAll</span><span class="params">(Local&lt;Object&gt; exports)</span> </span>&#123;</div><div class="line">  MyObject::Init(exports-&gt;GetIsolate());</div><div class="line"></div><div class="line">  NODE_SET_METHOD(exports, <span class="string">"createObject"</span>, CreateObject);</div><div class="line">  NODE_SET_METHOD(exports, <span class="string">"add"</span>, Add);</div><div class="line">&#125;</div><div class="line"></div><div class="line">NODE_MODULE(addon, InitAll)</div><div class="line"></div><div class="line">&#125;  <span class="comment">// namespace demo</span></div></pre></td></tr></table></figure>
+<p>在 <code>myobject.h</code> 中，新增了一个新的公共方法用于在去包装对象后访问私有值。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// myobject.h</span></div><div class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> MYOBJECT_H</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> MYOBJECT_H</span></div><div class="line"></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;node.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;node_object_wrap.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="keyword">namespace</span> demo &#123;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyObject</span> :</span> <span class="keyword">public</span> node::ObjectWrap &#123;</div><div class="line"> <span class="keyword">public</span>:</div><div class="line">  <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Init</span><span class="params">(v8::Isolate* isolate)</span></span>;</div><div class="line">  <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">NewInstance</span><span class="params">(<span class="keyword">const</span> v8::FunctionCallbackInfo&lt;v8::Value&gt;&amp; args)</span></span>;</div><div class="line">  <span class="function"><span class="keyword">inline</span> <span class="keyword">double</span> <span class="title">value</span><span class="params">()</span> <span class="keyword">const</span> </span>&#123; <span class="keyword">return</span> value_; &#125;</div><div class="line"></div><div class="line"> <span class="keyword">private</span>:</div><div class="line">  <span class="function"><span class="keyword">explicit</span> <span class="title">MyObject</span><span class="params">(<span class="keyword">double</span> value = <span class="number">0</span>)</span></span>;</div><div class="line">  ~MyObject();</div><div class="line"></div><div class="line">  <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">New</span><span class="params">(<span class="keyword">const</span> v8::FunctionCallbackInfo&lt;v8::Value&gt;&amp; args)</span></span>;</div><div class="line">  <span class="keyword">static</span> v8::Persistent&lt;v8::Function&gt; constructor;</div><div class="line">  <span class="keyword">double</span> value_;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">&#125;  <span class="comment">// namespace demo</span></div><div class="line"></div><div class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></div></pre></td></tr></table></figure>
+<p><code>myobject.cc</code> 中的实现类似之前的例子：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// myobject.cc</span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;node.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"myobject.h"</span></span></div><div class="line"></div><div class="line"><span class="keyword">namespace</span> demo &#123;</div><div class="line"></div><div class="line"><span class="keyword">using</span> v8::Context;</div><div class="line"><span class="keyword">using</span> v8::Function;</div><div class="line"><span class="keyword">using</span> v8::FunctionCallbackInfo;</div><div class="line"><span class="keyword">using</span> v8::FunctionTemplate;</div><div class="line"><span class="keyword">using</span> v8::Isolate;</div><div class="line"><span class="keyword">using</span> v8::Local;</div><div class="line"><span class="keyword">using</span> v8::Object;</div><div class="line"><span class="keyword">using</span> v8::Persistent;</div><div class="line"><span class="keyword">using</span> v8::String;</div><div class="line"><span class="keyword">using</span> v8::Value;</div><div class="line"></div><div class="line">Persistent&lt;Function&gt; MyObject::constructor;</div><div class="line"></div><div class="line">MyObject::MyObject(<span class="keyword">double</span> value) : value_(value) &#123;</div><div class="line">&#125;</div><div class="line"></div><div class="line">MyObject::~MyObject() &#123;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">void</span> MyObject::Init(Isolate* isolate) &#123;</div><div class="line">  <span class="comment">// Prepare constructor template</span></div><div class="line">  Local&lt;FunctionTemplate&gt; tpl = FunctionTemplate::New(isolate, New);</div><div class="line">  tpl-&gt;SetClassName(String::NewFromUtf8(isolate, <span class="string">"MyObject"</span>));</div><div class="line">  tpl-&gt;InstanceTemplate()-&gt;SetInternalFieldCount(<span class="number">1</span>);</div><div class="line"></div><div class="line">  constructor.Reset(isolate, tpl-&gt;GetFunction());</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">void</span> MyObject::New(<span class="keyword">const</span> FunctionCallbackInfo&lt;Value&gt;&amp; args) &#123;</div><div class="line">  Isolate* isolate = args.GetIsolate();</div><div class="line"></div><div class="line">  <span class="keyword">if</span> (args.IsConstructCall()) &#123;</div><div class="line">    <span class="comment">// 像构造函数一样调用：`new MyObject(...)`</span></div><div class="line">    <span class="keyword">double</span> value = args[<span class="number">0</span>]-&gt;IsUndefined() ? <span class="number">0</span> : args[<span class="number">0</span>]-&gt;NumberValue();</div><div class="line">    MyObject* obj = <span class="keyword">new</span> MyObject(value);</div><div class="line">    obj-&gt;Wrap(args.This());</div><div class="line">    args.GetReturnValue().Set(args.This());</div><div class="line">  &#125; <span class="keyword">else</span> &#123;</div><div class="line">    <span class="comment">// 像普通方法 `MyObject(...)` 一样调用，转为构造调用。</span></div><div class="line">    <span class="keyword">const</span> <span class="keyword">int</span> argc = <span class="number">1</span>;</div><div class="line">    Local&lt;Value&gt; argv[argc] = &#123; args[<span class="number">0</span>] &#125;;</div><div class="line">    Local&lt;Context&gt; context = isolate-&gt;GetCurrentContext();</div><div class="line">    Local&lt;Function&gt; cons = Local&lt;Function&gt;::New(isolate, constructor);</div><div class="line">    Local&lt;Object&gt; instance =</div><div class="line">        cons-&gt;NewInstance(context, argc, argv).ToLocalChecked();</div><div class="line">    args.GetReturnValue().Set(instance);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">void</span> MyObject::NewInstance(<span class="keyword">const</span> FunctionCallbackInfo&lt;Value&gt;&amp; args) &#123;</div><div class="line">  Isolate* isolate = args.GetIsolate();</div><div class="line"></div><div class="line">  <span class="keyword">const</span> <span class="keyword">unsigned</span> argc = <span class="number">1</span>;</div><div class="line">  Local&lt;Value&gt; argv[argc] = &#123; args[<span class="number">0</span>] &#125;;</div><div class="line">  Local&lt;Function&gt; cons = Local&lt;Function&gt;::New(isolate, constructor);</div><div class="line">  Local&lt;Context&gt; context = isolate-&gt;GetCurrentContext();</div><div class="line">  Local&lt;Object&gt; instance =</div><div class="line">      cons-&gt;NewInstance(context, argc, argv).ToLocalChecked();</div><div class="line"></div><div class="line">  args.GetReturnValue().Set(instance);</div><div class="line">&#125;</div><div class="line"></div><div class="line">&#125;  <span class="comment">// namespace demo</span></div></pre></td></tr></table></figure>
+<p>测试：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// test.js</span></div><div class="line"><span class="keyword">const</span> addon = <span class="built_in">require</span>(<span class="string">'./build/Release/addon'</span>);</div><div class="line"></div><div class="line"><span class="keyword">const</span> obj1 = addon.createObject(<span class="number">10</span>);</div><div class="line"><span class="keyword">const</span> obj2 = addon.createObject(<span class="number">20</span>);</div><div class="line"><span class="keyword">const</span> result = addon.add(obj1, obj2);</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(result);</div><div class="line"><span class="comment">// 打印: 30</span></div></pre></td></tr></table></figure>
+<h3 id="AtExit-hooks"><a href="#AtExit-hooks" class="headerlink" title="AtExit hooks"></a>AtExit hooks</h3><p>“AtExit” 钩子是一个函数，它在 Node.js 事件循环结束后、但在 JavaScript 虚拟机被终止与 Node.js 关闭前被调用。<br>“AtExit” 钩子使用 <code>node::AtExit</code> API 注册。</p>
+<h4 id="void-AtExit-callback-args"><a href="#void-AtExit-callback-args" class="headerlink" title="void AtExit(callback, args)"></a>void AtExit(callback, args)</h4><ul>
+<li><code>callback</code>: <code>void (*)(void*)</code> - 一个退出时调用的函数的指针。</li>
+<li><code>args</code>: <code>void*</code> - 一个退出时传递给回调的指针。</li>
+</ul>
+<p>注册的 AtExit 钩子会在事件循环结束之后但虚拟机被终止之前退出。</p>
+<p>AtExit 有两个参数：一个退出时运行的回调函数的指针，和一个要传入回调的无类型的上下文数据的指针。</p>
+<p>回调按照后进先出的顺序运行。</p>
+<p>以下 <code>addon.cc</code> 实现了 AtExit：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// addon.cc</span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;assert.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;node.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="keyword">namespace</span> demo &#123;</div><div class="line"></div><div class="line"><span class="keyword">using</span> node::AtExit;</div><div class="line"><span class="keyword">using</span> v8::HandleScope;</div><div class="line"><span class="keyword">using</span> v8::Isolate;</div><div class="line"><span class="keyword">using</span> v8::Local;</div><div class="line"><span class="keyword">using</span> v8::Object;</div><div class="line"></div><div class="line"><span class="keyword">static</span> <span class="keyword">char</span> cookie[] = <span class="string">"yum yum"</span>;</div><div class="line"><span class="keyword">static</span> <span class="keyword">int</span> at_exit_cb1_called = <span class="number">0</span>;</div><div class="line"><span class="keyword">static</span> <span class="keyword">int</span> at_exit_cb2_called = <span class="number">0</span>;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">at_exit_cb1</span><span class="params">(<span class="keyword">void</span>* arg)</span> </span>&#123;</div><div class="line">  Isolate* isolate = <span class="keyword">static_cast</span>&lt;Isolate*&gt;(arg);</div><div class="line">  <span class="function">HandleScope <span class="title">scope</span><span class="params">(isolate)</span></span>;</div><div class="line">  Local&lt;Object&gt; obj = Object::New(isolate);</div><div class="line">  assert(!obj.IsEmpty()); <span class="comment">// assert VM is still alive</span></div><div class="line">  assert(obj-&gt;IsObject());</div><div class="line">  at_exit_cb1_called++;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">at_exit_cb2</span><span class="params">(<span class="keyword">void</span>* arg)</span> </span>&#123;</div><div class="line">  assert(arg == <span class="keyword">static_cast</span>&lt;<span class="keyword">void</span>*&gt;(cookie));</div><div class="line">  at_exit_cb2_called++;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">sanity_check</span><span class="params">(<span class="keyword">void</span>*)</span> </span>&#123;</div><div class="line">  assert(at_exit_cb1_called == <span class="number">1</span>);</div><div class="line">  assert(at_exit_cb2_called == <span class="number">2</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">(Local&lt;Object&gt; exports)</span> </span>&#123;</div><div class="line">  AtExit(at_exit_cb2, cookie);</div><div class="line">  AtExit(at_exit_cb2, cookie);</div><div class="line">  AtExit(at_exit_cb1, exports-&gt;GetIsolate());</div><div class="line">  AtExit(sanity_check);</div><div class="line">&#125;</div><div class="line"></div><div class="line">NODE_MODULE(addon, init)</div><div class="line"></div><div class="line">&#125;  <span class="comment">// namespace demo</span></div></pre></td></tr></table></figure>
+<p>测试：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// test.js</span></div><div class="line"><span class="built_in">require</span>(<span class="string">'./build/Release/addon'</span>);</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/09/12/hexo_build_blog/" rel="next" title="记录：hexo 搭建个人博客并部署到 Github">
+                <i class="fa fa-chevron-left"></i> 记录：hexo 搭建个人博客并部署到 Github
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/09/12/assert/" rel="prev" title="">
+                 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Übersicht
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="Point" />
+          <p class="site-author-name" itemprop="name">Point</p>
+           
+              <p class="site-description motion-element" itemprop="description">Personal Blog</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">Artikel</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">Tags</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#C-Addons"><span class="nav-number">1.</span> <span class="nav-text">C++ Addons</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Hello-world"><span class="nav-number">1.1.</span> <span class="nav-text">Hello world</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Building"><span class="nav-number">1.1.1.</span> <span class="nav-text">Building</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Linking-to-Node-js’-own-dependencies"><span class="nav-number">1.1.2.</span> <span class="nav-text">Linking to Node.js’ own dependencies</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Loading-Addons-using-require"><span class="nav-number">1.1.3.</span> <span class="nav-text">Loading Addons using require()</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Native-Abstractions-for-Node-js"><span class="nav-number">1.2.</span> <span class="nav-text">Native Abstractions for Node.js</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#N-API"><span class="nav-number">1.3.</span> <span class="nav-text">N-API</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Addon-examples"><span class="nav-number">1.4.</span> <span class="nav-text">Addon examples</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Function-arguments"><span class="nav-number">1.4.1.</span> <span class="nav-text">Function arguments</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Callbacks"><span class="nav-number">1.4.2.</span> <span class="nav-text">Callbacks</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Object-factory"><span class="nav-number">1.4.3.</span> <span class="nav-text">Object factory</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Function-factory"><span class="nav-number">1.4.4.</span> <span class="nav-text">Function factory</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Wrapping-C-objects"><span class="nav-number">1.4.5.</span> <span class="nav-text">Wrapping C++ objects</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Factory-of-wrapped-objects"><span class="nav-number">1.4.6.</span> <span class="nav-text">Factory of wrapped objects</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Passing-wrapped-objects-around"><span class="nav-number">1.4.7.</span> <span class="nav-text">Passing wrapped objects around</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AtExit-hooks"><span class="nav-number">1.4.8.</span> <span class="nav-text">AtExit hooks</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#void-AtExit-callback-args"><span class="nav-number">1.4.8.1.</span> <span class="nav-text">void AtExit(callback, args)</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Point</span>
+</div>
+
+
+<div class="powered-by">
+  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
