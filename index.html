@@ -51,9 +51,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -78,7 +78,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/09/12/demo/">demo</a>
+      <a class="article-title" href="/2017/09/12/demo/">记录：hexo 搭建个人博客并部署到 Github</a>
     </h1>
   
 
@@ -86,13 +86,40 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h2 id="Hexo-简介"><a href="#Hexo-简介" class="headerlink" title="Hexo 简介"></a>Hexo 简介</h2><p>A fast, simple &amp; powerful blog framework</p>
+<p>Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
+<p>详情请参见：<br><a href="https://hexo.io/" target="_blank" rel="external">Hexo 英文官网</a><br><a href="https://hexo.io/zh-cn/" target="_blank" rel="external">Hexo 中文官网</a></p>
+<h2 id="环境-工具"><a href="#环境-工具" class="headerlink" title="环境/工具"></a>环境/工具</h2><ul>
+<li>OS: Win10</li>
+<li>Node.js</li>
+<li>Git<h2 id="安装-Hexo-流程-命令行"><a href="#安装-Hexo-流程-命令行" class="headerlink" title="安装 Hexo 流程(命令行)"></a>安装 Hexo 流程(命令行)</h2></li>
+<li>npm 全局安装 Hexo：<code>npm install hexo-cli -g</code>，hexo: 3.3.9</li>
+<li>切换到一个目标空文件夹：<code>cd &lt;folder&gt;</code></li>
+<li>执行：<code>hexo init</code></li>
+<li><p>执行：<code>npm install</code>，安装 Hexo 的依赖包（貌似不需要，<code>hexo init</code> 帮我们完成了），生成的目录结构如下</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">.</div><div class="line">├── _config.yml</div><div class="line">├── package.json</div><div class="line">|── node_modules </div><div class="line">├── scaffolds</div><div class="line">├── source</div><div class="line">|   ├── _drafts</div><div class="line">|   └── _posts</div><div class="line">└── themes</div></pre></td></tr></table></figure>
+</li>
+<li><p>执行：<code>hexo serve</code>，将默认启动一个服务器，浏览器输入地址：<a href="http://localhost:4000，将会打开你的博客内容" target="_blank" rel="external">http://localhost:4000，将会打开你的博客内容</a></p>
+</li>
+</ul>
+<h2 id="部署到-Github"><a href="#部署到-Github" class="headerlink" title="部署到 Github"></a>部署到 Github</h2><ul>
+<li><p>Hexo 安装依赖： <code>npm install hexo-deployer-git --save</code><br>该依赖解决执行 <code>hexo deploy</code> 后,出现的 <strong>error deployer not found:git</strong> 的错误</p>
+</li>
+<li><p>修改 _config.yml 文件</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"># Deployment</div><div class="line">## Docs: https://hexo.io/docs/deployment.html</div><div class="line">deploy:</div><div class="line">  type:</div><div class="line">  branch:</div><div class="line"></div><div class="line">修改为：</div><div class="line">  </div><div class="line"># Deployment</div><div class="line">## Docs: https://hexo.io/docs/deployment.html</div><div class="line">deploy:</div><div class="line">  type: git</div><div class="line">  repository: https://github.com/你的github账户名/你的github账户名.github.io.git</div><div class="line">  branch: master</div></pre></td></tr></table></figure>
+</li>
+<li><p><code>hexo g -d</code></p>
+</li>
+</ul>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/09/12/demo/" data-id="cj7h3hbxk00005ggjvgmso3iw" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/09/12/demo/" data-id="cj7h5p0y00001zggjgdhw7wjk" class="article-share-link">Partager</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo-博客-github/">hexo 博客 github</a></li></ul>
+
     </footer>
   </div>
   
@@ -135,7 +162,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/09/12/hello-world/" data-id="cj7h3hbxs00015ggjt016khnu" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/09/12/hello-world/" data-id="cj7h5p0xr0000zggjtn5jl3lj" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -154,9 +181,23 @@
 
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Mot-clés</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo-博客-github/">hexo 博客 github</a></li></ul>
+    </div>
+  </div>
+
 
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Nuage de mot-clés</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/hexo-博客-github/" style="font-size: 10px;">hexo 博客 github</a>
+    </div>
+  </div>
+
   
     
   <div class="widget-wrap">
@@ -170,12 +211,12 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">Articles récents</h3>
     <div class="widget">
       <ul>
         
           <li>
-            <a href="/2017/09/12/demo/">demo</a>
+            <a href="/2017/09/12/demo/">记录：hexo 搭建个人博客并部署到 Github</a>
           </li>
         
           <li>
@@ -195,7 +236,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2017 Point<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
