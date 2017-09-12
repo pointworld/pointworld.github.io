@@ -3,20 +3,20 @@
 <head>
   <meta charset="utf-8">
   
-  <title>point</title>
+  <title>Point</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="C++ AddonsNode.js 插件是用 C++ 编写的动态链接共享对象，可以使用 require() 函数加载到 Node.js 中，且像普通的 Node.js 模块一样被使用。它们主要用于为运行在 Node.js 中的 JavaScript 与 C/C++ 库之间提供接口。 目前用于实现插件的方法相当复杂，涉及多个组件和 API 的知识：  V8：Node.js 目前用于提供 JavaSc">
 <meta property="og:type" content="article">
-<meta property="og:title" content="point">
-<meta property="og:url" content="http://yoursite.com/2017/09/12/addons/index.html">
-<meta property="og:site_name" content="point">
+<meta property="og:title" content="Point">
+<meta property="og:url" content="https://pointworld.github.io/2017/09/12/addons/index.html">
+<meta property="og:site_name" content="Point">
 <meta property="og:description" content="C++ AddonsNode.js 插件是用 C++ 编写的动态链接共享对象，可以使用 require() 函数加载到 Node.js 中，且像普通的 Node.js 模块一样被使用。它们主要用于为运行在 Node.js 中的 JavaScript 与 C/C++ 库之间提供接口。 目前用于实现插件的方法相当复杂，涉及多个组件和 API 的知识：  V8：Node.js 目前用于提供 JavaSc">
 <meta property="og:updated_time" content="2017-09-08T05:52:12.517Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="point">
+<meta name="twitter:title" content="Point">
 <meta name="twitter:description" content="C++ AddonsNode.js 插件是用 C++ 编写的动态链接共享对象，可以使用 require() 函数加载到 Node.js 中，且像普通的 Node.js 模块一样被使用。它们主要用于为运行在 Node.js 中的 JavaScript 与 C/C++ 库之间提供接口。 目前用于实现插件的方法相当复杂，涉及多个组件和 API 的知识：  V8：Node.js 目前用于提供 JavaSc">
   
-    <link rel="alternative" href="/atom.xml" title="point" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="Point" type="application/atom+xml">
   
   
     <link rel="icon" href="/img/favicon.png">
@@ -64,6 +64,8 @@
           <h1 class="header-author"><a href="/" title="Hi Mate">Point</a></h1>
         </hgroup>
 
+        
+        <p class="header-subtitle">Point World</p>
         
         
         
@@ -127,9 +129,9 @@
                     <nav class="header-nav">
                         <ul class="social">
                             
-                                <a class="fl mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=PAkNDgsKBQ4MCnxNTRJfU1E" title="mail">mail</a>
+                                <a class="fl mail" target="_blank" href="#" title="mail">mail</a>
                             
-                                <a class="fl github" target="_blank" href="https://github.com/luuman" title="github">github</a>
+                                <a class="fl github" target="_blank" href="https://github.com/pointworld" title="github">github</a>
                             
                                 <a class="fl zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
                             
@@ -157,7 +159,7 @@
                 <section class="switch-part switch-part3">
                     <div id="js-friends">
                     
-                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://luuman.github.io/">name</a>
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://pointworld.github.io/">name</a>
                     
                     </div>
                 </section>
@@ -192,6 +194,8 @@
               <h1 class="header-author"><a href="/" title="Me">Point</a></h1>
             </hgroup>
             
+            <p class="header-subtitle">Point World</p>
+            
             <nav class="header-menu">
                 <ul>
                 
@@ -209,9 +213,9 @@
             <nav class="header-nav">
                 <div class="social">
                     
-                        <a class="mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=PAkNDgsKBQ4MCnxNTRJfU1E" title="mail">mail</a>
+                        <a class="mail" target="_blank" href="#" title="mail">mail</a>
                     
-                        <a class="github" target="_blank" href="https://github.com/luuman" title="github">github</a>
+                        <a class="github" target="_blank" href="https://github.com/pointworld" title="github">github</a>
                     
                         <a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
                     
@@ -300,7 +304,7 @@
 <p>如果有一个以上的 <code>.cc</code> 文件，则只需添加额外的文件名到 <code>sources</code> 数组。<br>例如：</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">"sources": ["addon.cc", "myexample.cc"]</div></pre></td></tr></table></figure>
 <p>当 <code>binding.gyp</code> 文件准备就绪，则插件示例可以使用 <code>node-gyp</code> 进行配置和构建：</p>
-<figure class="highlight console"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span> node-gyp configure build</div></pre></td></tr></table></figure>
+<figure class="highlight console"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span><span class="bash"> node-gyp configure build</span></div></pre></td></tr></table></figure>
 <h3 id="Function-arguments"><a href="#Function-arguments" class="headerlink" title="Function arguments"></a>Function arguments</h3><p>插件通常会开放一些对象和函数，供运行在 Node.js 中的 JavaScript 访问。<br>当从 JavaScript 调用函数时，输入参数和返回值必须与 C/C++ 代码相互映射。</p>
 <p>以下例子描述了如何读取从 JavaScript 传入的函数参数与如何返回结果：</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// addon.cc</span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;node.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="keyword">namespace</span> demo &#123;</div><div class="line"></div><div class="line"><span class="keyword">using</span> v8::Exception;</div><div class="line"><span class="keyword">using</span> v8::FunctionCallbackInfo;</div><div class="line"><span class="keyword">using</span> v8::Isolate;</div><div class="line"><span class="keyword">using</span> v8::Local;</div><div class="line"><span class="keyword">using</span> v8::Number;</div><div class="line"><span class="keyword">using</span> v8::Object;</div><div class="line"><span class="keyword">using</span> v8::String;</div><div class="line"><span class="keyword">using</span> v8::Value;</div><div class="line"></div><div class="line"><span class="comment">// 这是 "add" 方法的实现</span></div><div class="line"><span class="comment">// 输入参数使用 const FunctionCallbackInfo&lt;Value&gt;&amp; args 结构传入</span></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">Add</span><span class="params">(<span class="keyword">const</span> FunctionCallbackInfo&lt;Value&gt;&amp; args)</span> </span>&#123;</div><div class="line">  Isolate* isolate = args.GetIsolate();</div><div class="line"></div><div class="line">  <span class="comment">// 检查传入的参数的个数</span></div><div class="line">  <span class="keyword">if</span> (args.Length() &lt; <span class="number">2</span>) &#123;</div><div class="line">    <span class="comment">// 抛出一个错误并传回到 JavaScript</span></div><div class="line">    isolate-&gt;ThrowException(Exception::TypeError(</div><div class="line">        String::NewFromUtf8(isolate, <span class="string">"参数的数量错误"</span>)));</div><div class="line">    <span class="keyword">return</span>;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="comment">// 检查参数的类型</span></div><div class="line">  <span class="keyword">if</span> (!args[<span class="number">0</span>]-&gt;IsNumber() || !args[<span class="number">1</span>]-&gt;IsNumber()) &#123;</div><div class="line">    isolate-&gt;ThrowException(Exception::TypeError(</div><div class="line">        String::NewFromUtf8(isolate, <span class="string">"参数错误"</span>)));</div><div class="line">    <span class="keyword">return</span>;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="comment">// 执行操作</span></div><div class="line">  <span class="keyword">double</span> value = args[<span class="number">0</span>]-&gt;NumberValue() + args[<span class="number">1</span>]-&gt;NumberValue();</div><div class="line">  Local&lt;Number&gt; num = Number::New(isolate, value);</div><div class="line"></div><div class="line">  <span class="comment">// 设置返回值</span></div><div class="line">  args.GetReturnValue().Set(num);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">Init</span><span class="params">(Local&lt;Object&gt; exports)</span> </span>&#123;</div><div class="line">  NODE_SET_METHOD(exports, <span class="string">"add"</span>, Add);</div><div class="line">&#125;</div><div class="line"></div><div class="line">NODE_MODULE(addon, Init)</div><div class="line"></div><div class="line">&#125;  <span class="comment">// namespace demo</span></div></pre></td></tr></table></figure>
@@ -422,8 +426,8 @@
         <p><span>发布时间:</span>2017年09月12日 - 14时35分</p>
         <p><span>最后更新:</span>2017年09月08日 - 13时52分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2017/09/12/addons/" title="">http://yoursite.com/2017/09/12/addons/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2017/09/12/addons/　　作者: Point" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2017/09/12/addons/" title="">https://pointworld.github.io/2017/09/12/addons/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://pointworld.github.io/2017/09/12/addons/　　作者: Point" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -509,8 +513,8 @@
 <script>
     var gitment = new Gitment({
       id: window.location.pathname,
-      owner: 'luuman',
-      repo: 'luuman.github.io',
+      owner: 'pointworld',
+      repo: 'pointworld.github.io',
       oauth: {
         client_id: '',
         client_secret: '',
@@ -535,7 +539,7 @@
             </a>
         
     </div>
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/09/12/async_hooks/">async_hooks</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/12/assert/">assert</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/12/addons/">addons</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/12/hexo_build_blog/">记录：hexo 搭建个人博客并部署到 Github</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/12/hello-world/">Hello World</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/09/12/test/">test</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/12/async_hooks/">async_hooks</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/12/assert/">assert</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/12/addons/">addons</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/12/hexo_build_blog/">记录：hexo 搭建个人博客并部署到 Github</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/12/hello-world/">Hello World</a></li></ul>
     <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
     <script>
         $(".post-list").addClass("toc-article");
