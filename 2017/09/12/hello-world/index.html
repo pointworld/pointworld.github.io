@@ -232,8 +232,7 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-hello-world" class="article article-type-post" itemscope
-         itemprop="blogPost">
+      <div class="body-wrap"><article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
     
     <div class="article-meta">
         <a href="/2017/09/12/hello-world/" class="article-date">
@@ -317,7 +316,7 @@
                     $(this).addClass('checked').siblings('.pay_item').removeClass('checked');
                     var dataid = $(this).attr('data-id');
                     $(".shang_payimg img").attr("src", "/img/" + dataid + "img.jpg");
-                    $("#shang_pay_txt").text(dataid == "alipay" ? "支付宝" : "微信");
+                    $("#shang_pay_txt").text(dataid === "alipay" ? "支付宝" : "微信");
                 });
                 function dashangToggle() {
 
