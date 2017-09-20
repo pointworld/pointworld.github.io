@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>记录：hexo 搭建个人博客并部署到 Github | Point</title>
+  <title>记录：Hexo 搭建个人博客并自动化部署到 Github | Point</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Hexo 简介 A fast, simple &amp;amp; powerful blog framework Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。  详情请参见：Hexo 英文官网Hexo 中文官网 环境/工具 OS: Win10 Node.js Git  安装 Hexo 流程 npm 全局安">
+  <meta name="description" content="本文主要记录如何利用 Hexo、Browser-sync、Markdown、Git 等工具将所写博客自动化部署到 Github。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="记录：hexo 搭建个人博客并部署到 Github">
+<meta property="og:title" content="记录：Hexo 搭建个人博客并自动化部署到 Github">
 <meta property="og:url" content="https://pointworld.github.io/2017/09/12/hexo_build_blog/index.html">
 <meta property="og:site_name" content="Point">
-<meta property="og:description" content="Hexo 简介 A fast, simple &amp;amp; powerful blog framework Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。  详情请参见：Hexo 英文官网Hexo 中文官网 环境/工具 OS: Win10 Node.js Git  安装 Hexo 流程 npm 全局安">
-<meta property="og:updated_time" content="2017-09-12T15:03:15.033Z">
+<meta property="og:description" content="本文主要记录如何利用 Hexo、Browser-sync、Markdown、Git 等工具将所写博客自动化部署到 Github。">
+<meta property="og:updated_time" content="2017-09-13T03:17:54.702Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="记录：hexo 搭建个人博客并部署到 Github">
-<meta name="twitter:description" content="Hexo 简介 A fast, simple &amp;amp; powerful blog framework Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。  详情请参见：Hexo 英文官网Hexo 中文官网 环境/工具 OS: Win10 Node.js Git  安装 Hexo 流程 npm 全局安">
+<meta name="twitter:title" content="记录：Hexo 搭建个人博客并自动化部署到 Github">
+<meta name="twitter:description" content="本文主要记录如何利用 Hexo、Browser-sync、Markdown、Git 等工具将所写博客自动化部署到 Github。">
   
     <link rel="alternative" href="/atom.xml" title="Point" type="application/atom+xml">
   
@@ -249,7 +249,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      记录：hexo 搭建个人博客并部署到 Github
+      记录：Hexo 搭建个人博客并自动化部署到 Github
     </h1>
   
 
@@ -266,15 +266,23 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="Hexo-简介"><a href="#Hexo-简介" class="headerlink" title="Hexo 简介"></a>Hexo 简介</h2><blockquote>
-<p>A fast, simple &amp; powerful blog framework</p>
+        <p><strong>本文主要记录如何利用 Hexo、Browser-sync、Markdown、Git 等工具将所写博客自动化部署到 Github。</strong></p>
+<hr>
+<a id="more"></a>
+<p>搭建博客之前先弄明白几个关键词：</p>
+<h3 id="博客（Blog）是什么？"><a href="#博客（Blog）是什么？" class="headerlink" title="博客（Blog）是什么？"></a><a href="https://baike.baidu.com/item/%E5%8D%9A%E5%AE%A2/124" target="_blank" rel="external">博客</a>（<a href="https://en.wikipedia.org/wiki/Blog" target="_blank" rel="external">Blog</a>）是什么？</h3><h3 id="为什么搭建博客？"><a href="#为什么搭建博客？" class="headerlink" title="为什么搭建博客？"></a>为什么搭建博客？</h3><h3 id="如何搭建博客？"><a href="#如何搭建博客？" class="headerlink" title="如何搭建博客？"></a>如何搭建博客？</h3><h2 id="Hexo-简介"><a href="#Hexo-简介" class="headerlink" title="Hexo 简介"></a>Hexo 简介</h2><blockquote>
+<p>A fast, simple &amp; powerful blog framework </p>
 <p>Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
 </blockquote>
-<p>详情请参见：<br><a href="https://hexo.io/" target="_blank" rel="external">Hexo 英文官网</a><br><a href="https://hexo.io/zh-cn/" target="_blank" rel="external">Hexo 中文官网</a></p>
+<p>详情请参见： <a href="https://hexo.io/" target="_blank" rel="external">Hexo 英文官网</a>、<a href="https://hexo.io/zh-cn/" target="_blank" rel="external">Hexo 中文官网</a></p>
 <h2 id="环境-工具"><a href="#环境-工具" class="headerlink" title="环境/工具"></a>环境/工具</h2><ul>
-<li>OS: Win10</li>
-<li>Node.js</li>
+<li>OS: Win10<ul>
+<li>Node.js<ul>
 <li>Git</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 <h2 id="安装-Hexo-流程"><a href="#安装-Hexo-流程" class="headerlink" title="安装 Hexo 流程"></a>安装 Hexo 流程</h2><ul>
 <li>npm 全局安装 Hexo：<code>npm install hexo-cli -g</code>，hexo: 3.3.9 </li>
@@ -294,9 +302,10 @@
 <li><p>修改 _config.yml 文件</p>
   <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"># Deployment</div><div class="line">## Docs: https://hexo.io/docs/deployment.html</div><div class="line">deploy:</div><div class="line">  type:</div><div class="line">  branch:</div><div class="line"></div><div class="line">修改为：</div><div class="line">  </div><div class="line"># Deployment</div><div class="line">## Docs: https://hexo.io/docs/deployment.html</div><div class="line">deploy:</div><div class="line">  type: git</div><div class="line">  repository: https://github.com/你的github账户名/你的github账户名.github.io.git</div><div class="line">  branch: master</div></pre></td></tr></table></figure>
 </li>
-<li><p>执行：<code>hexo g -d</code>，将博客内容同步到 Github 上，在浏览器地址栏输入 ‘<a href="https://你的github用户名.github.io/" target="_blank" rel="external">https://你的github用户名.github.io/</a>‘ 即可看到你的博客</p>
+<li><p>执行：<code>hexo g -d</code>，将博客内容同步到 Github 上，在浏览器地址栏输入 <code>https://你的github用户名.github.io/</code> 即可看到你的博客</p>
 </li>
 </ul>
+<hr>
 
       
       
@@ -352,12 +361,12 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2017/09/12/hexo_build_blog/">记录：hexo 搭建个人博客并部署到 Github</a></p>
+        <p><span>本文标题:</span><a href="/2017/09/12/hexo_build_blog/">记录：Hexo 搭建个人博客并自动化部署到 Github</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Point 的个人博客">Point</a></p>
         <p><span>发布时间:</span>2017年09月12日 - 12时04分</p>
-        <p><span>最后更新:</span>2017年09月12日 - 23时03分</p>
+        <p><span>最后更新:</span>2017年09月13日 - 11时17分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2017/09/12/hexo_build_blog/" title="记录：hexo 搭建个人博客并部署到 Github">https://pointworld.github.io/2017/09/12/hexo_build_blog/</a>
+            <span>原始链接:</span><a class="post-url" href="/2017/09/12/hexo_build_blog/" title="记录：Hexo 搭建个人博客并自动化部署到 Github">https://pointworld.github.io/2017/09/12/hexo_build_blog/</a>
             <span class="copy-path" data-clipboard-text="原文: https://pointworld.github.io/2017/09/12/hexo_build_blog/　　作者: Point" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
@@ -393,7 +402,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Hexo-简介"><span class="toc-number">1.</span> <span class="toc-text">Hexo 简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#环境-工具"><span class="toc-number">2.</span> <span class="toc-text">环境/工具</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装-Hexo-流程"><span class="toc-number">3.</span> <span class="toc-text">安装 Hexo 流程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#部署到-Github"><span class="toc-number">4.</span> <span class="toc-text">部署到 Github</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#博客（Blog）是什么？"><span class="toc-number">1.</span> <span class="toc-text">博客（Blog）是什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#为什么搭建博客？"><span class="toc-number">2.</span> <span class="toc-text">为什么搭建博客？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#如何搭建博客？"><span class="toc-number">3.</span> <span class="toc-text">如何搭建博客？</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hexo-简介"><span class="toc-number"></span> <span class="toc-text">Hexo 简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#环境-工具"><span class="toc-number"></span> <span class="toc-text">环境/工具</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装-Hexo-流程"><span class="toc-number"></span> <span class="toc-text">安装 Hexo 流程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#部署到-Github"><span class="toc-number"></span> <span class="toc-text">部署到 Github</span></a>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -470,7 +479,7 @@
             </a>
         
     </div>
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/09/12/test/">test</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/12/hexo_build_blog/">记录：hexo 搭建个人博客并部署到 Github</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/12/hello-world/">Hello World</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/09/14/LOGO-设计/">LOGO 设计</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/14/随记：信息词条的构成/">随记：信息词条的构成</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/12/test/">test</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/12/hexo_build_blog/">记录：Hexo 搭建个人博客并自动化部署到 Github</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/12/hello-world/">Hello World</a></li></ul>
     <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
     <script>
         $(".post-list").addClass("toc-article");

@@ -111,9 +111,11 @@ ol {
   list-style: decimal;
   padding-left: 20px;
 }
-ul {
+/* modified at 2017.09.13 by Point
+ul{
   list-style: none;
 }
+*/
 input,
 button {
   margin: 0;
@@ -140,7 +142,7 @@ body {
   font-family: "微软雅黑", 'Microsoft JhengHei', Tahoma, Helvetica, Arial, "\5b8b\4f53", sans-serif;
   font-size: 16px;
   background: #3f3f3f;
-  color: #999;
+  color: #bababa;
   -webkit-overflow-scrolling: touch;
 }
 ::selection {
@@ -3099,6 +3101,9 @@ a.gitment-editor-footer-tip:hover {
 .article-entry em {
   font-style: italic;
 }
+.article-entry ul {
+  list-style: none;
+}
 .article-entry ul,
 .article-entry ol {
   font-size: 14px;
@@ -3719,10 +3724,6 @@ a.gitment-editor-footer-tip:hover {
   white-space: pre;
 }
 .article-entry p a {
-  border: dashed 1px #000;
-  padding: 8px 8px;
-  border-radius: 5px;
-  background-color: #2f2e2e;
   word-wrap: break-word;
   white-space: pre;
   margin: 2px;
@@ -3730,11 +3731,6 @@ a.gitment-editor-footer-tip:hover {
 }
 .article-entry p a.fancy-ctn.fancybox::before {
   display: none;
-}
-.article-entry p a::before {
-  padding-right: 6px;
-  content: "\f0c1";
-  font: normal normal normal 14px/1 FontAwesome;
 }
 .article-entry p a:hover {
   color: #fff;
