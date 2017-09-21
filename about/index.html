@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>敬请期待... | Point</title>
+  <title>记录：hexo 搭建个人博客并部署到 Github | Point</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Personal Blog">
+  <meta name="description" content="Hexo 简介 A fast, simple &amp;amp; powerful blog framework Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。  详情请参见：Hexo 英文官网Hexo 中文官网 环境/工具 OS: Win10 Node.js Git  安装 Hexo 流程 npm 全局安">
 <meta property="og:type" content="website">
-<meta property="og:title" content="敬请期待...">
+<meta property="og:title" content="记录：hexo 搭建个人博客并部署到 Github">
 <meta property="og:url" content="https://pointworld.github.io/about/index.html">
 <meta property="og:site_name" content="Point">
-<meta property="og:description" content="Personal Blog">
-<meta property="og:updated_time" content="2017-09-21T10:07:28.026Z">
+<meta property="og:description" content="Hexo 简介 A fast, simple &amp;amp; powerful blog framework Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。  详情请参见：Hexo 英文官网Hexo 中文官网 环境/工具 OS: Win10 Node.js Git  安装 Hexo 流程 npm 全局安">
+<meta property="og:updated_time" content="2017-09-21T10:51:48.509Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="敬请期待...">
-<meta name="twitter:description" content="Personal Blog">
+<meta name="twitter:title" content="记录：hexo 搭建个人博客并部署到 Github">
+<meta name="twitter:description" content="Hexo 简介 A fast, simple &amp;amp; powerful blog framework Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。  详情请参见：Hexo 英文官网Hexo 中文官网 环境/工具 OS: Win10 Node.js Git  安装 Hexo 流程 npm 全局安">
   
     <link rel="alternative" href="/atom.xml" title="Point" type="application/atom+xml">
   
@@ -236,7 +236,7 @@
   
     <div class="article-meta">
       <a href="/about/index.html" class="article-date">
-      <time datetime="2017-09-12T15:11:55.000Z" itemprop="datePublished">2017-09-12</time>
+      <time datetime="2017-09-12T04:04:12.000Z" itemprop="datePublished">2017-09-12</time>
 </a>
     </div>
   
@@ -249,7 +249,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      敬请期待...
+      记录：hexo 搭建个人博客并部署到 Github
     </h1>
   
 
@@ -301,7 +301,38 @@
 
 
           
-        
+        <h2 id="Hexo-简介"><a href="#Hexo-简介" class="headerlink" title="Hexo 简介"></a>Hexo 简介</h2><blockquote>
+<p>A fast, simple &amp; powerful blog framework</p>
+<p>Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
+</blockquote>
+<p>详情请参见：<br><a href="https://hexo.io/" target="_blank" rel="external">Hexo 英文官网</a><br><a href="https://hexo.io/zh-cn/" target="_blank" rel="external">Hexo 中文官网</a></p>
+<h2 id="环境-工具"><a href="#环境-工具" class="headerlink" title="环境/工具"></a>环境/工具</h2><ul>
+<li>OS: Win10</li>
+<li>Node.js</li>
+<li>Git</li>
+</ul>
+<h2 id="安装-Hexo-流程"><a href="#安装-Hexo-流程" class="headerlink" title="安装 Hexo 流程"></a>安装 Hexo 流程</h2><ul>
+<li>npm 全局安装 Hexo：<code>npm install hexo-cli -g</code>，hexo: 3.3.9 </li>
+<li>切换到一个目标空文件夹：<code>cd &lt;folder&gt;</code></li>
+<li>执行：<code>hexo init</code></li>
+<li><p>执行：<code>npm install</code>，安装 Hexo 的依赖包（貌似不需要，<code>hexo init</code> 帮我们完成了），生成的目录结构如下</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">.</div><div class="line">├── _config.yml</div><div class="line">├── package.json</div><div class="line">|── node_modules </div><div class="line">├── scaffolds</div><div class="line">├── source</div><div class="line">|   ├── _drafts</div><div class="line">|   └── _posts</div><div class="line">└── themes</div></pre></td></tr></table></figure>
+</li>
+<li><p>执行：<code>hexo serve</code>，将默认启动一个服务器，浏览器输入地址：<code>http://localhost:4000</code>，将会打开你的博客内容</p>
+</li>
+</ul>
+<h2 id="部署到-Github"><a href="#部署到-Github" class="headerlink" title="部署到 Github"></a>部署到 Github</h2><ul>
+<li><p>github 的 SSH keys 配置：<a href="http://jingyan.baidu.com/article/d8072ac47aca0fec95cefd2d.html" target="_blank" rel="external">参见</a></p>
+</li>
+<li><p>Hexo 安装依赖： <code>npm install hexo-deployer-git --save</code><br>该依赖解决执行 <code>hexo deploy</code> 后,出现的 <strong>error deployer not found:git</strong> 的错误</p>
+</li>
+<li><p>修改 _config.yml 文件</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"># Deployment</div><div class="line">## Docs: https://hexo.io/docs/deployment.html</div><div class="line">deploy:</div><div class="line">  type:</div><div class="line">  branch:</div><div class="line"></div><div class="line">修改为：</div><div class="line">  </div><div class="line"># Deployment</div><div class="line">## Docs: https://hexo.io/docs/deployment.html</div><div class="line">deploy:</div><div class="line">  type: git</div><div class="line">  repository: https://github.com/你的github账户名/你的github账户名.github.io.git</div><div class="line">  branch: master</div></pre></td></tr></table></figure>
+</li>
+<li><p>执行：<code>hexo g -d</code>，将博客内容同步到 Github 上，在浏览器地址栏输入 ‘<a href="https://你的github用户名.github.io/" target="_blank" rel="external">https://你的github用户名.github.io/</a>‘ 即可看到你的博客</p>
+</li>
+</ul>
+
       
       
         <div class="page-reward">
